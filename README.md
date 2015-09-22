@@ -1,7 +1,7 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+Grafana to use Zabbix as data source
 
 Requirements
 ------------
