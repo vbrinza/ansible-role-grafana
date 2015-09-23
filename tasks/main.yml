@@ -1,2 +1,4 @@
 ---
-# tasks file for .
+#
+- name: Install YUM repository
+  file: src=grafana.repo dest=/etc/yum.repos.d/grafana.repo
