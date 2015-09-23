@@ -3,14 +3,14 @@
 - name: Create Repo File
   file: path=/etc/yum.repos.d/grafana.repo state=touch
 
-- name: Install YUM Repository
-  copy: src=grafana.repo dest=/etc/yum.repos.d/grafana.repo
+#- name: Install YUM Repository
+#  copy: src=grafana.repo dest=/etc/yum.repos.d/grafana.repo
 
-- name: Install RPM GPG Key
-  rpm_key: state=present key=https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+#- name: Install RPM GPG Key
+#  rpm_key: state=present key=https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
 
 - name: Install Grafana
-  yum: name=grafana state=present
+  yum: name=https://grafanarel.s3.amazonaws.com/builds/grafana-2.1.3-1.x86_64.rpm state=present
 
 - name: Enable Grafana Service
   service: name=grafana-server enabled=yes
