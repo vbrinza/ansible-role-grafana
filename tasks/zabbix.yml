@@ -1,0 +1,13 @@
+---
+#
+
+- name: Checkout Grafana Zabbix
+  git: repo=https://github.com/alexanderzobnin/grafana-zabbix.git
+       dest=/tmp/zabbix
+
+- name: Copy Grafana Zabbix into grafanaDatasourcePath
+  shell: cp -R /tmp/zabbix/zabbix {{ grafanaDatasourcePath }}
+
+- name: Restart Grafana Service
+  service: name=grafana-server state=restarted
+

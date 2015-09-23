@@ -1,2 +1,5 @@
 ---
 # defaults file for .
+
+zabbixDatasource: 0
+grafanaDatasourcePath: "/usr/share/grafana/public/app/plugins/datasource/"
